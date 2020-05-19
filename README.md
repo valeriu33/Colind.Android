@@ -1,4 +1,4 @@
-# Colinde.Android
+# Colind.Android
 Simple android application made to find and read teraditional Romanian and Moldovean Christmass songs named "Colinde"
 
 The goal for this provject is to complete an application with beautiful design and maitainable code
