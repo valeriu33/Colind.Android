@@ -1,4 +1,4 @@
-package com.example.colinde
+package com.valeriu.colindandroid
 
 import org.junit.Test
 
