@@ -18,16 +18,16 @@ class ColindsListAdapter(private val viewModel: ColindsListViewModel) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = getItem(position)
-
-        holder.bind(viewModel, item)
+        holder.bind(viewModel, item, position)
     }
 
     class ViewHolder private constructor(private val binding: ColindListItemBinding) :
             RecyclerView.ViewHolder(binding.root){
 
-        fun bind(viewModel: ColindsListViewModel, item: ColindEntity) {
+        fun bind(viewModel: ColindsListViewModel, item: ColindEntity, position: Int) {
             binding.viewModel = viewModel
             binding.colind = item
+            binding.position = position
             binding.executePendingBindings()
         }
         companion object {
@@ -39,10 +39,10 @@ class ColindsListAdapter(private val viewModel: ColindsListViewModel) :
             }
         }
     }
-
 }
 
 class ColindDifference: DiffUtil.ItemCallback<ColindEntity>() {
+
     override fun areItemsTheSame(oldItem: ColindEntity, newItem: ColindEntity): Boolean {
         return oldItem.id == newItem.id
     }
@@ -50,5 +50,4 @@ class ColindDifference: DiffUtil.ItemCallback<ColindEntity>() {
     override fun areContentsTheSame(oldItem: ColindEntity, newItem: ColindEntity): Boolean {
         return oldItem.title == newItem.title
     }
-
 }
