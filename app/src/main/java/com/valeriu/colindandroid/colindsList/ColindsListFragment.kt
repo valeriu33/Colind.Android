@@ -39,7 +39,6 @@ class ColindsListFragment : Fragment() {
 //        setupRefreshLayout(viewDataBinding.refreshLayout, viewDataBinding.tasksList)
 //        viewDataBinding.r.scrollUpChild = scrollUpChild
         setupNavigation()
-//        setupFab()
     }
 
     private fun setupNavigation() {
@@ -59,7 +58,7 @@ class ColindsListFragment : Fragment() {
             listAdapter = ColindsListAdapter(viewModel)
             viewDataBinding.recyclerListColinds.adapter = listAdapter
         } else {
-            Log.v("AAAAAAAAAAAAAAAAAAAAA","ViewModel not initialized when attempting to set up adapter.")
+            Log.v("Error","ViewModel not initialized when attempting to set up adapter.")// TODO Snack fucking bar
         }
     }
 }

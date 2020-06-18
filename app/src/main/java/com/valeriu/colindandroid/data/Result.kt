@@ -17,13 +17,6 @@ sealed class Result<out R> {
     val succeeded get() = this is Success && data != null
 }
 
-
-class MyResult<T>(
-    val success: Boolean,
-    val data: T?,
-    val exception: Exception?
-)
-
 /**
  * `true` if [Result] is of type [Success] & holds non-null [Success.data].
  */

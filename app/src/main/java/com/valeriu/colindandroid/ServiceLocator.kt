@@ -12,7 +12,6 @@ import com.valeriu.colindandroid.data.source.remote.ColindApi
 import com.valeriu.colindandroid.data.source.remote.RemoteColindDataSource
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
 
 object ServiceLocator {
 
@@ -42,7 +41,7 @@ object ServiceLocator {
     private fun createDatabase(context: Context): ColindDatabase {
         val result = Room.databaseBuilder(
             context.applicationContext,
-            ColindDatabase::class.java, "Tasks.db"
+            ColindDatabase::class.java, Constants.DATABASE_NAME
         ).build()
         database = result
         return result
@@ -50,7 +49,7 @@ object ServiceLocator {
 
     private fun createColindApiInstance(): ColindApi {
         val retrofit =  Retrofit.Builder()
-            .baseUrl("http://161.35.208.211/")
+                .baseUrl(Constants.API_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
         val colindApi = retrofit.create(ColindApi::class.java)

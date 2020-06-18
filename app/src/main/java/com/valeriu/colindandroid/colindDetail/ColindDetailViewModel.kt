@@ -21,7 +21,6 @@ class ColindDetailViewModel(
     }
 
     val colind: LiveData<ColindEntity> = _colind
-    val wtf: LiveData<String> = MutableLiveData<String>("Wtf")
 
     private val _dataLoading = MutableLiveData<Boolean>()
     val dataLoading: LiveData<Boolean> = _dataLoading
@@ -39,18 +38,8 @@ class ColindDetailViewModel(
         return if (taskResult is Success) {
             taskResult.data
         } else {
-//            showSnackbarMessage(R.string.loading_tasks_error)
+//            showSnackbarMessage(R.string.loading_tasks_error) TODO implement snackbar
             ColindEntity(1,"title","text","")
-        }
-    }
-
-    fun refresh() {
-        _colind.value?.let {
-            _dataLoading.value = true
-            viewModelScope.launch {
-                colindRepository.refreshColind(it.id)
-                _dataLoading.value = false
-            }
         }
     }
 }

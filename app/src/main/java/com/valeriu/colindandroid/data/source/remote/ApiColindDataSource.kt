@@ -26,23 +26,4 @@ class ApiColindDataSource(
         }
 //        Success(colindApi.getColindList()) // TODO Add ERROR HANDLING
     }
-
-//    override fun getColinds(): Result<List<ColindDto>> {
-//        var result: Result<List<ColindDto>>
-//        colindApi.getColindList().enqueue(object :Callback<List<ColindDto>>{
-//            override fun onFailure(call: Call<List<ColindDto>>, t: Throwable) {
-//                result =  Result.Error(Exception())
-//            }
-//
-//            override fun onResponse(call: Call<List<ColindDto>>, response: Response<List<ColindDto>>) {
-//                response.body()?.run {
-//                    if(response.isSuccessful && (this.isSuccess())){
-//                        callback.onSuccess(this.data)
-//                    }else{
-//                        callback.onError(this.msg)
-//                    }
-//                }
-//            }
-//        })
-//    }
 }
