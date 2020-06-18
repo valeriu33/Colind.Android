@@ -23,4 +23,4 @@ The goal for this project is to make a simple application using Architecture Com
 
 - To add english and russian language support
 
-![](https://github.com/valeriu33/Colind.Android/blob/master/progress_animation.gif)
+![altText](https://github.com/valeriu33/Colind.Android/blob/master/progress_animation.gif)
