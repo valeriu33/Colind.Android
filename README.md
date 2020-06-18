@@ -5,13 +5,13 @@ The goal for this project is to make a simple application using Architecture Com
 
 ## Features i'd like to implement
 
-~- Display a list of colind titles~
+- Display a list of colind titles ✅
 
-~- Selecting a colind opens a separate window with colind text/details~
+- Selecting a colind opens a separate window with colind text/details ✅
 
-~- To receive data from the Colind.API data source~
+- To receive data from the Colind.API data source ✅
 
-~- To cache data on device's database~
+- To cache data on device's database ✅
 
 - Auto-scroll function when double-tap on colind's text
 
