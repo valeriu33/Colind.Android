@@ -20,11 +20,11 @@ import com.valeriu.colindandroid.utils.getViewModelFactory
  */
 class ColindDetailFragment : Fragment() {
 
+    private val viewModel by viewModels<ColindDetailViewModel> { getViewModelFactory() }
+
     private lateinit var viewDataBinding: FragmentColindDetailBinding
 
     private val args: ColindDetailFragmentArgs by navArgs()
-
-    private val viewModel by viewModels<ColindDetailViewModel> { getViewModelFactory() }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

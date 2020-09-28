@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/colindsListFragment">
+    app:startDestination="@id/colinds_list_fragment_dest">
 
     <fragment
-        android:id="@+id/colindsListFragment"
+        android:id="@+id/colinds_list_fragment_dest"
         android:name="com.valeriu.colindandroid.colindsList.ColindsListFragment"
         android:label="ColindsListFragment" >
         <argument
@@ -15,20 +15,23 @@
             android:defaultValue="0" />
         <action
             android:id="@+id/action_colindsListFragment_to_colindDetailFragment"
-            app:destination="@id/colindDetailFragment"
+            app:destination="@id/colind_detail_fragment_dest"
             app:enterAnim="@anim/fragment_open_enter"
             app:exitAnim="@anim/fragment_open_exit"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_colindsListFragment_to_bellFragment"
+            app:destination="@id/bell_fragment_dest" />
     </fragment>
     <fragment
-        android:id="@+id/colindDetailFragment"
+        android:id="@+id/colind_detail_fragment_dest"
         android:name="com.valeriu.colindandroid.colindDetail.ColindDetailFragment"
         android:label="fragment_colind_detail"
         tools:layout="@layout/fragment_colind_detail" >
         <action
             android:id="@+id/action_colindDetailFragment_to_colindsListFragment"
-            app:destination="@id/colindsListFragment"
+            app:destination="@id/colinds_list_fragment_dest"
             app:enterAnim="@anim/fragment_close_enter"
             app:exitAnim="@anim/fragment_close_exit"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
@@ -36,5 +39,14 @@
         <argument
             android:name="colindId"
             app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/bell_fragment_dest"
+        android:name="com.valeriu.colindandroid.bell.BellFragment"
+        android:label="bell_fragment"
+        tools:layout="@layout/bell_fragment" >
+        <action
+            android:id="@+id/action_bellFragment_to_colindsListFragment"
+            app:destination="@id/colinds_list_fragment_dest" />
     </fragment>
 </navigation>

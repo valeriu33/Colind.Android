@@ -30,7 +30,7 @@ class ColindsListViewModel (
     val dataLoading: LiveData<Boolean> = _dataLoading
 
     private val _openColindEvent = MutableLiveData<Event<Int>>()
-    val openColindEvent = _openColindEvent
+    val openColindEvent: LiveData<Event<Int>> = _openColindEvent
 
     init {
         loadColinds()
@@ -57,6 +57,5 @@ class ColindsListViewModel (
 
         return result
     }
-
-
 }
+

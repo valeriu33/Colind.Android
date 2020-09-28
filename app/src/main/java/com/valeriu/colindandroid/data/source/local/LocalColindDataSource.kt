@@ -17,4 +17,5 @@ interface LocalColindDataSource {
     suspend fun deleteAllColinds()
 
     suspend fun saveColind(colind: ColindEntity)
+
 }
