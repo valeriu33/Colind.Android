@@ -3,6 +3,7 @@ package com.valeriu.colindandroid.colindDetail
 import android.widget.Toast
 import androidx.lifecycle.*
 import com.valeriu.colindandroid.ColindApplication
+import com.valeriu.colindandroid.Event
 import com.valeriu.colindandroid.data.models.ColindEntity
 import com.valeriu.colindandroid.data.source.ColindRepository
 import com.valeriu.colindandroid.data.Result.Success
@@ -25,17 +26,25 @@ class ColindDetailViewModel(
     private val _dataLoading = MutableLiveData<Boolean>()
     val dataLoading: LiveData<Boolean> = _dataLoading
 
+    private val _openColindEvent = MutableLiveData<Event<String>>()
+    val openColindEvent: LiveData<Event<String>> = _openColindEvent
+
+//    fun openColind(colindName: String) {
+//        _openColindEvent.value = Event(colindName)
+//    }
+
     fun start(colindId: Int?) {
         // If we're already loading or already loaded, return (might be a config change)
         if (_dataLoading.value == true || colindId == _colindId.value) {
             return
         }
-        // Trigger the load
-        _colindId.value = colindId
+
+        _colindId.value = colindId ?: 0
     }
 
     private fun computeResult(taskResult: Result<ColindEntity>): ColindEntity {
         return if (taskResult is Success) {
+            _openColindEvent.value = Event(taskResult.data.title)
             taskResult.data
         } else {
 //            showSnackbarMessage(R.string.loading_tasks_error) TODO implement snackbar

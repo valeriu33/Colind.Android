@@ -11,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import com.valeriu.colindandroid.EventObserver
 import com.valeriu.colindandroid.databinding.FragmentColindsListBinding
 import com.valeriu.colindandroid.utils.getViewModelFactory
+import kotlinx.android.synthetic.main.activity_colinds.*
 
 class ColindsListFragment : Fragment() {
 
@@ -26,6 +27,7 @@ class ColindsListFragment : Fragment() {
     ): View? {
         viewDataBinding = FragmentColindsListBinding.inflate(inflater, container, false)
         viewDataBinding.viewModel = this@ColindsListFragment.viewModel
+//        appbar.text
 
         return viewDataBinding.root
     }
@@ -34,6 +36,7 @@ class ColindsListFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
 
         viewDataBinding.lifecycleOwner = this.viewLifecycleOwner
+        (activity as ColindsActivity?)?.supportActionBar?.title = ""
 
         setupListAdapter()
 //        setupRefreshLayout(viewDataBinding.refreshLayout, viewDataBinding.tasksList)
